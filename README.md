@@ -121,3 +121,25 @@ hand pose changes the root mean square changes. Overall, the music generation de
 ***
 
 ## Installation guidelines and platform details 
+
+Platform: Google Colab
+
+- Clone this repository using 
+```
+$ git clone https://github.com/kkalaria16/CSE518-AI-Project-Pipeline-Predators.git
+```
+- Install the dependencies using
+```
+$ pip install -r requirements.txt
+```
+- To run locally, launch jupyter notebook using `$ jupyter notebook` or upload the `.ipynb` file on Google Colab
+
+***
+
+## References
+
+- Ali Erol, George Bebis, Mircea Nicolescu, Richard D. Boyle, Xander Twombly, ”Vision-based hand pose estimation: A review”, 2007. [Online]. Available: [Link](https://doi.org/10.1016/j.cviu.2006.10.012). [Accessed: 19-Oct-2021]
+- E. Barsoum, “Articulated Hand Pose Estimation Review,” 2016. [Online]. Available: [Link](https://arxiv.org/pdf/1604.06195). [Accessed: 19-Oct-2021].
+- Lu Ding, Yong Wang, Robert Laganiere, Dan Huang, Shan Fud, ”A CNN model for real time hand pose estimation”, August 2021. [Online]. Available: [Link](https://www.sciencedirect.com/science/article/abs/pii/S1047320321001279). [Accessed: 19-Oct-2021].
+- Liuhao Ge, Hui Liang, Junsong Yuan, Daniel Thalmann, ”Real-Time 3D Hand Pose Estimation with 3D Convolutional Neural Networks”, April 2016. [Online]. Available: [Link](https://pubmed.ncbi.nlm.nih.gov/29993927/). [Accessed: 19-Oct-2021].
+- Van-Hung Le, Hung-Cuong Nguyen, ”A Survey on 3D Hand Skeleton and Pose Estimation by Convolutional Neural Network”, July 2020. [Online]. Available: [Link](https://astesj.com/v05/i04/p18/). [Accessed: 19-Oct-2021]
