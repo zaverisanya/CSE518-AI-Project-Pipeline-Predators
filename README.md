@@ -32,6 +32,8 @@ After considering several datasets, we decided to use the Large-scale Multiview 
 
 From the 3D coordinates provided for the dataset, such that for every set of 4 images describing the same pose from different cameras at different angles, the coordinates of the keypoints remain the same, and in the frame of the Leap Motion controller. So, the first thing we needed to do is perform projection transitions to get the 2D coordinates for each image in their own frame of reference.
 
+![Dataset Generation](https://github.com/kkalaria16/CSE518-AI-Project-Pipeline-Predators/blob/main/images/Dataset%20Gen.jpg)
+
 Then we had to generate a Pandas DataFrame consisting of image paths and corresponding newly generated x and y coordinates for each keypoint. We then take a random sample of it to use, to make training computationally feasible. Finally, we split it into train-validation data and make respective Keras ImageDataGenerators to pass to the model for training. ImageDataGenerators were indispensable because otherwise the input array consisting of the image arrays was extremely large and was computationally impossible to make with the available resources. We did not use the dataset to do the testing. Rather, we tested on the live webcam feed.
 
 ### CNN Architecture
@@ -63,6 +65,23 @@ Layers:
 
 ### Training (Hand Pose)
 
+We train the CNN to estimate keypoint locations from hand
+images.
+
+![Training Process](https://github.com/kkalaria16/CSE518-AI-Project-Pipeline-Predators/blob/main/images/Training.jpg)
+
 ### Testing (Hand Pose)
 
+![Testing Process](https://github.com/kkalaria16/CSE518-AI-Project-Pipeline-Predators/blob/main/images/Testing.jpg)
+
 ### Music Generation
+
+We used a simple mathematical function to map the coordinates to a note.
+- Root mean square of all 21 x coordinates was calculated.
+- It was squared.
+- Then it was multiplied once by 2000 and once by 4000 to yield two different frequencies (say, frequency 1 and frequency 2).
+- Frequency 1 was used to create a sine wave note and frequency 2 was used to create a cosine wave note.
+
+Similar exercise was done with the y coordinates. All in all, we had 4 notes (waves). We added all of them to get the final wave note to play. If R_X is the root mean square of all x coordinates and R_Y is the root mean square of all y coordinates, the equation of the wave describing the note played is:
+![Equation](https://github.com/kkalaria16/CSE518-AI-Project-Pipeline-Predators/blob/main/images/equation.png)
+
